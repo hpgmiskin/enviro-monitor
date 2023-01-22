@@ -103,6 +103,15 @@ def get_cpu_temperature():
         temp = int(temp) / 1000.0
     return temp
 
+# TODO: Add a function to read PM data with failsafe serial
+#  main  Traceback (most recent call last):
+#  main    File "/usr/src/app/main.py", line 215, in <module>
+#  main      data = pms5003.read()
+#  main    File "/usr/local/lib/python3.9/site-packages/pms5003/__init__.py", line 125, in read
+#  main      sof = self._serial.read(1)
+#  main    File "/usr/local/lib/python3.9/site-packages/serial/serialposix.py", line 595, in read
+#  main      raise SerialException(
+#  main  serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
 
 # Tuning factor for compensation. Decrease this number to adjust the
 # temperature down, and increase to adjust up
